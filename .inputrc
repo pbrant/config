@@ -1,0 +1,13 @@
+set completion-ignore-case on
+set bell-style none
+
+$if mode=vi
+    "\C-0-": digit-argument
+    TAB: menu-complete
+    "\e[Z": "\C-0-\t"
+$else
+    TAB: menu-complete
+    "\e[Z": "\e--\t"
+$endif 
+
+# vim: ts=4:sw=4:expandtab

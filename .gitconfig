@@ -1,0 +1,16 @@
+[core]
+	excludesfile = /home/pbrant/.gitignore
+#	autocrlf = input
+[user]
+	name = Peter Brant
+	email = peter.brant@gmail.com
+[diff]
+	color = true
+	tool = meld
+[branch]
+	autosetuprebase = always
+
+[alias]
+        pp = "!bash -c 'if (git symbolic-ref HEAD | grep -q master) && ! (git log -1 | grep -q Reviewed-by) ; then echo Hold on there! Missing Reviewed-by.  Cannot push. ; else git push ; fi'"
+
+
