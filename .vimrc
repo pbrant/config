@@ -67,3 +67,5 @@ nnoremap ,gh :lcd ~/v4workspace/ccap3<CR>:pwd<CR>
 nnoremap ,f :NERDTreeFind<CR>
 
 let g:ctrlp_regexp = 1
+
+inoremap <C-[> <Esc>
