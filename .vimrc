@@ -53,16 +53,15 @@ set efm=%E\ %#[error]\ %f:%l:\ %m,%C\ %#[error]\ %p^,%-C%.%#,%Z,
 
 set wildignore+=*/target/*,*/.git/*
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/ack
+set runtimepath^=~/.vim/bundle/ctrlp.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/ack,~/.vim/bundle/sauce
 
-set tags=./tags;tags;~/v4workspace/sourcedeps/tags;~
+set tags=./tags;tags;~
 
 " au BufRead,BufNewFile *.scala set tags+=~/v4workspace/sourcedeps/tags
 
 " source ~/.vim/autotag.vim
 
 nnoremap ,cd :lcd %:p:h<CR>:pwd<CR>
-nnoremap ,gh :lcd ~/v4workspace/ccap3<CR>:pwd<CR>
 
 nnoremap ,f :NERDTreeFind<CR>
 
