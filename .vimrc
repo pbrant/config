@@ -55,7 +55,7 @@ set wildignore+=*/target/*,*/.git/*
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/ack,~/.vim/bundle/sauce
 
-set tags=./tags;tags;~
+set tags=./tags;~,tags
 
 " au BufRead,BufNewFile *.scala set tags+=~/v4workspace/sourcedeps/tags
 
