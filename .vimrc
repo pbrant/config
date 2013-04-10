@@ -9,6 +9,7 @@ set clipboard+=unnamed
 set autowrite
 set lcs=tab:%-,eol:$,trail:~,extends:>,precedes:<
 set hidden
+set wildmenu
 " set ballooneval
 
 syntax on

@@ -4,3 +4,4 @@ set tags+=~/v4workspace/sourcedeps/tags
 
 nnoremap ,gh :lcd ~/v4workspace/ccap3<CR>:pwd<CR>
 
+nnoremap ,cc :! ctags -R --exclude=target<CR><CR>
