@@ -10,6 +10,8 @@ set autowrite
 set lcs=tab:%-,eol:$,trail:~,extends:>,precedes:<
 set hidden
 set wildmenu
+set wildmode=longest:full,full
+
 " set ballooneval
 
 syntax on
