@@ -36,7 +36,9 @@ set dictionary+=/etc/dictionaries-common/words
 
 imap <C-Space> <C-X><C-O>
 
-nnoremap \b :CtrlPBuffer<CR>
+nnoremap <Leader>b :CtrlPBuffer<CR>
+
+nnoremap <Leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
 
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:~:.:h\")})%)%(\ %a%)\ (%{pathshorten(getcwd())})
 
