@@ -12,6 +12,9 @@ set hidden
 set wildmenu
 set wildmode=longest:full,full
 
+set guioptions-=m
+set guioptions-=T
+
 " set ballooneval
 
 syntax on
