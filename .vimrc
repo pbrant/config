@@ -33,7 +33,7 @@ let g:rubycomplete_include_object = 1
 let g:rubycomplete_include_objectspace = 1
 
 au BufRead,BufNewFile *.rb,*.erb set tags=~/.vim/jruby_tags,tags
-au BufRead,BufNewFile *.rb,*.erb,*.html,*.css set ts=2 sw=2 sts=2 expandtab
+au BufRead,BufNewFile *.rb,*.erb,*.html,*.css,*.json set ts=2 sw=2 sts=2 expandtab
 
 set dictionary+=/etc/dictionaries-common/words
 
