@@ -1,0 +1,17 @@
+
+- Install msysGit (autocrlf = false, install in %PATH%)
+- Comment out git prompt in /etc/profile (search for __git_ps1)
+- Install gvim and add to system %PATH%
+- Install ctags binary
+- Install ConsoleZ (from https://github.com/cbucher/console)
+  - Turn off menu, toolbar, status bar
+  - Font Consolas 12
+  - Shell
+    C:\Windows\System32\cmd.exe /c ""C:\Program Files\Git\bin\sh.exe" --login -i"
+
+    (path to cmd.exe will be different on 64-bit Windows)
+
+- Install AutoHotkey (see AutoHotKey.ahk)
+- (maybe) Install http://getgnuwin32.sourceforge.net/ (don't have it installed currently, would want to make sure that msys binaries appear earlier in the $PATH)
+- .vimsauce can be installed as is, .vim goes to ~/vimfiles
+- Modify build.bat for current project (uv.vimrc assumes it is in the current directory)

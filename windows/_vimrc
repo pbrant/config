@@ -15,6 +15,10 @@ set wildmode=longest:full,full
 set guioptions-=m
 set guioptions-=T
 
+set guifont=Consolas:h11:cANSI
+
+set path+=C:/StellarisWare
+
 " set ballooneval
 
 syntax on
@@ -32,7 +36,7 @@ let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_include_object = 1
 let g:rubycomplete_include_objectspace = 1
 
-au BufRead,BufNewFile *.rb,*.erb set tags=~/.vim/jruby_tags,tags
+au BufRead,BufNewFile *.rb,*.erb set tags=~/vimfiles/jruby_tags,tags
 au BufRead,BufNewFile *.rb,*.erb,*.html,*.css,*.json set ts=2 sw=2 sts=2 expandtab
 
 set dictionary+=/etc/dictionaries-common/words
@@ -61,17 +65,17 @@ set efm=%E\ %#[error]\ %f:%l:\ %m,%C\ %#[error]\ %p^,%-C%.%#,%Z,
 
 set wildignore+=*/target/*,*/.git/*
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/ack,~/.vim/bundle/sauce
+set runtimepath^=~/vimfiles/bundle/ctrlp.vim,~/vimfiles/bundle/ack,~/vimfiles/bundle/sauce
 
 set tags=./tags;~,tags
 
 " au BufRead,BufNewFile *.scala set tags+=~/v4workspace/sourcedeps/tags
 
-" source ~/.vim/autotag.vim
+" source ~/vimfiles/autotag.vim
 
 nnoremap ,cd :lcd %:p:h<CR>:pwd<CR>
 
-nnoremap ,f :NERDTreeFind<CR>
+" nnoremap ,f :NERDTreeFind<CR>
 
 let g:ctrlp_regexp = 1
 
