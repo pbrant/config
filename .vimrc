@@ -33,7 +33,8 @@ let g:rubycomplete_include_object = 1
 let g:rubycomplete_include_objectspace = 1
 
 au BufRead,BufNewFile *.rb,*.erb set tags=~/.vim/jruby_tags,tags
-au BufRead,BufNewFile *.rb,*.erb,*.html,*.css,*.json set ts=2 sw=2 sts=2 expandtab
+au BufRead,BufNewFile *.rb,*.erb,*.html,*.css,*.json,*.js set ts=2 sw=2 sts=2 expandtab
+au BufRead,BufNewFile *.java set ts=4 sw=4 sts=4 expandtab
 
 set dictionary+=/etc/dictionaries-common/words
 
@@ -74,4 +75,9 @@ nnoremap ,cd :lcd %:p:h<CR>:pwd<CR>
 nnoremap ,f :NERDTreeFind<CR>
 
 let g:ctrlp_regexp = 1
+
+if ! has('gui_running')
+  set t_Co=256
+  set background=dark
+endif
 
