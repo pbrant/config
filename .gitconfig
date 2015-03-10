@@ -14,3 +14,7 @@
         pp = "!bash -c 'if (git symbolic-ref HEAD | grep -q master) && ! (git log -1 | grep -q Reviewed-by) ; then echo Hold on there! Missing Reviewed-by.  Cannot push. ; else git push ; fi'"
 
 
+[push]
+	default = simple
+[gc]
+	pruneExpire = never
