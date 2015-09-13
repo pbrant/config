@@ -44,6 +44,7 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 
 nnoremap <Leader>d :bp<bar>sp<bar>bn<bar>bd<CR>
 
+set title
 set titlestring=%t%(\ %M%)%(\ (%{expand(\"%:~:.:h\")})%)%(\ %a%)\ (%{pathshorten(getcwd())})
 
 " nnoremap <C-k> :execute "vimgrep /\\<" . expand("<cword>") . "\\>/ **/*"
@@ -62,7 +63,7 @@ set efm=%E\ %#[error]\ %f:%l:\ %m,%C\ %#[error]\ %p^,%-C%.%#,%Z,
 
 set wildignore+=*/target/*,*/.git/*
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/ack,~/.vim/bundle/sauce,~/.vim/bundle/vim-clojure-static,~/.vim/bundle/rainbow_parentheses.vim,~/.vim/bundle/vim-fireplace
+set runtimepath^=~/.vim/bundle/ctrlp.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/ack,~/.vim/bundle/sauce,~/.vim/bundle/vim-clojure-static,~/.vim/bundle/rainbow_parentheses.vim,~/.vim/bundle/vim-fireplace,~/.vim/bundle/syntastic,~/.vim/bundle/haskellmode-vim,~/.vim/bundle/vim-hoogle
 
 set tags=./tags;~,tags
 
@@ -80,4 +81,19 @@ if ! has('gui_running')
   set t_Co=256
   set background=dark
 endif
+
+nnoremap <Leader>e :Errors<CR>
+
+nnoremap tw :call GHC_ShowType(1)<CR>
+
+let g:haddock_browser = "/usr/bin/firefox"
+
+au FileType haskell compiler ghc
+
+au FileType haskell setlocal tags+=~/haskell/sources/tags
+
+au FileType haskell set formatprg=pointfree\ --stdin
+au FileType haskell map <buffer> <Leader>q :Hoogle
+au FileType haskell map <buffer> <silent> <Leader>w :HoogleClose<CR>
+au FileType haskell map <buffer> <silent> <Leader>e :HoogleLine<CR>
 
