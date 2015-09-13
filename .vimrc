@@ -33,7 +33,7 @@ let g:rubycomplete_include_object = 1
 let g:rubycomplete_include_objectspace = 1
 
 au BufRead,BufNewFile *.rb,*.erb set tags=~/.vim/jruby_tags,tags
-au BufRead,BufNewFile *.rb,*.erb,*.html,*.css,*.json,*.js set ts=2 sw=2 sts=2 expandtab
+au BufRead,BufNewFile *.rb,*.erb,*.html,*.css,*.json,*.js,*.scss set ts=2 sw=2 sts=2 expandtab
 au BufRead,BufNewFile *.java set ts=4 sw=4 sts=4 expandtab
 
 set dictionary+=/etc/dictionaries-common/words
@@ -56,10 +56,10 @@ set sp=>
 nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 " set makeprg=./sbt-vim\ \"project\ jury\"\ compile
-set makeprg=./sbt-vim\ compile
-set efm=%E\ %#[error]\ %f:%l:\ %m,%C\ %#[error]\ %p^,%-C%.%#,%Z,
-       \%W\ %#[warn]\ %f:%l:\ %m,%C\ %#[warn]\ %p^,%-C%.%#,%Z,
-       \%-G%.%#
+" set makeprg=./sbt-vim\ \"project\ cc-model\"\ compile
+" set efm=%E\ %#[error]\ %f:%l:\ %m,%C\ %#[error]\ %p^,%-C%.%#,%Z,
+"        \%W\ %#[warn]\ %f:%l:\ %m,%C\ %#[warn]\ %p^,%-C%.%#,%Z,
+"        \%-G%.%#
 
 set wildignore+=*/target/*,*/.git/*
 
@@ -97,3 +97,4 @@ au FileType haskell map <buffer> <Leader>q :Hoogle
 au FileType haskell map <buffer> <silent> <Leader>w :HoogleClose<CR>
 au FileType haskell map <buffer> <silent> <Leader>e :HoogleLine<CR>
 
+digr ee 8799
