@@ -95,6 +95,6 @@ au FileType haskell setlocal tags+=~/haskell/sources/tags
 au FileType haskell set formatprg=pointfree\ --stdin
 au FileType haskell map <buffer> <Leader>q :Hoogle
 au FileType haskell map <buffer> <silent> <Leader>w :HoogleClose<CR>
-au FileType haskell map <buffer> <silent> <Leader>e :HoogleLine<CR>
+" au FileType haskell map <buffer> <silent> <Leader>e :HoogleLine<CR>
 
 digr ee 8799
