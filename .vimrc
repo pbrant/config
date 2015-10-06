@@ -101,3 +101,9 @@ digr ee 8799
 
 set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
+
+let g:syntastic_ignore_files = ['\.java$']
+
+set autoread
+nnoremap rr :silent! checktime<CR>
+
