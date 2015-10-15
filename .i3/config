@@ -157,3 +157,4 @@ bindsym $mod+v exec pavucontrol
 bindsym $mod+Shift+e exec ~/.i3/i3-exit
 for_window [class="I3-exit" instance="i3-exit"] floating enable
 
+exec --no-startup-id sleep 3 && xfce4-power-manager
