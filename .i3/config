@@ -84,7 +84,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -157,4 +157,3 @@ bindsym $mod+v exec pavucontrol
 bindsym $mod+Shift+e exec ~/.i3/i3-exit
 for_window [class="I3-exit" instance="i3-exit"] floating enable
 
-exec --no-startup-id sleep 3 && xfce4-power-manager
