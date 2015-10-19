@@ -63,7 +63,7 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 set wildignore+=*/target/*,*/.git/*,*/dist/*,*/build/*
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/ack,~/.vim/bundle/sauce,~/.vim/bundle/vim-clojure-static,~/.vim/bundle/rainbow_parentheses.vim,~/.vim/bundle/vim-fireplace,~/.vim/bundle/syntastic,~/.vim/bundle/haskellmode-vim,~/.vim/bundle/vim-hoogle
+set runtimepath^=~/.vim/bundle/ctrlp.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/ack,~/.vim/bundle/sauce,~/.vim/bundle/vim-clojure-static,~/.vim/bundle/rainbow_parentheses.vim,~/.vim/bundle/vim-fireplace,~/.vim/bundle/syntastic,~/.vim/bundle/haskellmode-vim,~/.vim/bundle/vim-hoogle,~/.vim/bundle/vim-hdevtools
 
 set tags=./tags;~,tags
 
@@ -84,9 +84,16 @@ endif
 
 nnoremap <Leader>e :Errors<CR>
 
-nnoremap tw :call GHC_ShowType(1)<CR>
+" nnoremap tw :call GHC_ShowType(1)<CR>
 
 let g:haddock_browser = "/usr/bin/firefox"
+
+nnoremap <leader>ht :HdevtoolsType<CR>
+nnoremap <leader>hc :HdevtoolsClear<CR>
+nnoremap <leader>hi :HdevtoolsInfo<CR>
+
+let g:hdevtools_options = '-c --enable-tests'
+let g:syntastic_haskell_hdevtools_args = '-c --enable-tests'
 
 au FileType haskell compiler ghc
 
