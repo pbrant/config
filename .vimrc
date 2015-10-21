@@ -107,3 +107,7 @@ let g:syntastic_ignore_files = ['\.java$']
 set autoread
 nnoremap rr :silent! checktime<CR>
 
+let g:clojure_fuzzy_indent = 1
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^dom']
+let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
+
