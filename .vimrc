@@ -33,7 +33,7 @@ let g:rubycomplete_include_object = 1
 let g:rubycomplete_include_objectspace = 1
 
 au BufRead,BufNewFile *.rb,*.erb set tags=~/.vim/jruby_tags,tags
-au BufRead,BufNewFile *.rb,*.erb,*.html,*.css,*.json,*.js,*.scss,*.xsl set ts=2 sw=2 sts=2 expandtab
+au BufRead,BufNewFile *.rb,*.erb,*.html,*.css,*.json,*.js,*.scss,*.xsl,*.hs set ts=2 sw=2 sts=2 expandtab
 au BufRead,BufNewFile *.java set ts=4 sw=4 sts=4 expandtab
 
 set dictionary+=/etc/dictionaries-common/words
@@ -61,7 +61,7 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 "        \%W\ %#[warn]\ %f:%l:\ %m,%C\ %#[warn]\ %p^,%-C%.%#,%Z,
 "        \%-G%.%#
 
-set wildignore+=*/target/*,*/.git/*,*/dist/*,*/build/*
+set wildignore+=*/target/*,*/.git/*,*/dist/*,*/build/*,*/node_modules/*
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/ack,~/.vim/bundle/sauce,~/.vim/bundle/vim-clojure-static,~/.vim/bundle/rainbow_parentheses.vim,~/.vim/bundle/vim-fireplace,~/.vim/bundle/syntastic,~/.vim/bundle/haskellmode-vim,~/.vim/bundle/vim-hoogle,~/.vim/bundle/vim-hdevtools
 
@@ -110,6 +110,7 @@ set ssop-=options    " do not store global and local values in a session
 set ssop-=folds      " do not store folds
 
 let g:syntastic_ignore_files = ['\.java$']
+let g:syntastic_haskell_checkers = ['hdevtools', 'hlint']
 
 set autoread
 nnoremap rr :silent! checktime<CR>
