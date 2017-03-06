@@ -1,7 +1,0 @@
-google-chrome Windows+C
-google-chrome --incognito Windows+N
-wmctrl -a 'VimCcap3' Ctrl+Alt+i
-wmctrl -a 'XChat:' Ctrl+Alt+o
-wmctrl -a 'SBT Compile' Ctrl+Alt+u
-
-
