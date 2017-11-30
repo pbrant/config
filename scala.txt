@@ -1,0 +1,35 @@
+---------------------------------------------
+A few notes on my (primitive) ccap3 Scala editing setup
+---------------------------------------------
+
+Tools
+  - tmux. vim inspired config file is ~/.tmux.conf (mostly courtesy of cwinebr,
+    with a few minor edits)
+  - ctags. Scala language definition is in ~/.ctags. It works pretty well, but
+    does not match case class fields (no val).
+  - vim. Config file is ~/.vimrc along with ~/.vimsauce and ~/.vim (certainly
+    no longer up-to-date, would be [much!] better to use Pathogen)
+
+Basic Scala (ccap3) workflow:
+  - cd ~/v4workspace/ccap3
+  - tmux
+  - one large editor pane, one or two tool panes stacked to the left (for sbt
+    or runwebpack)
+  - File navigation via Ctrl+P (CtrlP plugin); buffer navigation with \b (also
+    CtrlP via .vimrc)
+  - :Sauce ccap3 to load ccap3 specific config (,cd change to directory of
+    current file; ,gh go back to ~/v4workspace/ccap3; ,cc regenerate tags; add
+    ccap3 ctags file)
+  - :ts, :tj, Ctrl+] for tag navigation
+  - Ctrl+kk to grep based word under cursor
+
+~/v4workspace/ccap3/sourcedeps/tags is created via grabthem.sh + unpackthem.sh
++ ctags. The first just greps through the gen-idea generated config files
+looking for source JARs.
+
+I have not tried http://ensime.org/editors/vim/ or ENSIME with Emacs +
+evil.
+
+I do rarely (maybe once every few months) still use IntelliJ (+ the ideavim
+plugin) for browsing an unfamiliar code base.
+

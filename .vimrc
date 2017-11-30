@@ -1,3 +1,21 @@
+if &compatible
+  set nocompatible
+endif
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
+
+if dein#load_state(expand('~/.vim/dein'))
+  call dein#begin(expand('~/.vim/dein'))
+
+  call dein#add(expand('~/.vim/dein/repos/github.com/Shougo/dein.vim'))
+  call dein#add('vim-syntastic/syntastic')
+  call dein#add('raichoo/purescript-vim')
+  call dein#add('frigoeu/psc-ide-vim')
+  call dein#add('kien/ctrlp.vim')
+  call dein#add('joonty/vim-sauce')
+
+  call dein#end()
+  call dein#save_state()
+endif
 
 set modeline
 set incsearch
@@ -25,12 +43,6 @@ filetype plugin on
 set novisualbell
 set noerrorbells
 " set laststatus=2
-
-let g:rubycomplete_rails = 0
-let g:rubycomplete_classes_in_global = 1
-let g:rubycomplete_buffer_loading = 1
-let g:rubycomplete_include_object = 1
-let g:rubycomplete_include_objectspace = 1
 
 au BufRead,BufNewFile *.rb,*.erb set tags=~/.vim/jruby_tags,tags
 au BufRead,BufNewFile *.rb,*.erb,*.html,*.css,*.json,*.js,*.scss,*.xsl,*.hs,*.purs,*.tex set ts=2 sw=2 sts=2 expandtab
@@ -63,7 +75,7 @@ nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 set wildignore+=*/target/*,*/.git/*,*/dist/*,*/build/*,*/node_modules/*
 
-set runtimepath^=~/.vim/bundle/ctrlp.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/ack,~/.vim/bundle/sauce,~/.vim/bundle/vim-clojure-static,~/.vim/bundle/rainbow_parentheses.vim,~/.vim/bundle/vim-fireplace,~/.vim/bundle/syntastic,~/.vim/bundle/haskellmode-vim,~/.vim/bundle/vim-hoogle,~/.vim/bundle/vim-hdevtools,~/.vim/bundle/purescript-vim,~/.vim/bundle/psc-ide-vim
+" set runtimepath^=~/.vim/bundle/ctrlp.vim,~/.vim/bundle/nerdtree,~/.vim/bundle/ack,~/.vim/bundle/sauce,~/.vim/bundle/vim-clojure-static,~/.vim/bundle/rainbow_parentheses.vim,~/.vim/bundle/vim-fireplace,~/.vim/bundle/syntastic,~/.vim/bundle/haskellmode-vim,~/.vim/bundle/vim-hoogle,~/.vim/bundle/vim-hdevtools,~/.vim/bundle/purescript-vim,~/.vim/bundle/psc-ide-vim
 
 set tags=./tags;~,tags
 
@@ -73,8 +85,6 @@ set tags=./tags;~,tags
 
 nnoremap ,cd :lcd %:p:h<CR>:pwd<CR>
 
-nnoremap ,f :NERDTreeFind<CR>
-
 let g:ctrlp_regexp = 1
 
 if ! has('gui_running')
@@ -83,8 +93,6 @@ if ! has('gui_running')
 endif
 
 nnoremap <Leader>e :Errors<CR>
-
-" nnoremap tw :call GHC_ShowType(1)<CR>
 
 let g:haddock_browser = "/usr/bin/firefox"
 
@@ -126,14 +134,15 @@ let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^dom']
 let g:clojure_fuzzy_indent_blacklist = ['-fn$', '\v^with-%(meta|out-str|loading-context)$']
 
 let g:psc_ide_check_output_dir = 0
+let g:psc_ide_syntastic_mode = 1
 
-au FileType purescript nmap <leader>t :PSCIDEtype<CR>
-au FileType purescript nmap <leader>s :PSCIDEapplySuggestion<CR>
-au FileType purescript nmap <leader>a :PSCIDEaddTypeAnnotation<CR>
-au FileType purescript nmap <leader>i :PSCIDEimportIdentifier<CR>
-au FileType purescript nmap <leader>r :PSCIDEload<CR>
-au FileType purescript nmap <leader>p :PSCIDEpursuit<CR>
-au FileType purescript nmap <leader>c :PSCIDEcaseSplit<CR>
-au FileType purescript nmap <leader>qd :PSCIDEremoveImportQualifications<CR>
-au FileType purescript nmap <leader>qa :PSCIDEaddImportQualifications<CR>
-au FileType purescript nmap <leader>g :PSCIDEgoToDefinition<CR>
+au FileType purescript nm <buffer> <leader>t :<C-U>Ptype<CR>
+au FileType purescript nm <buffer> <leader>T :<C-U>PaddType<CR>
+au FileType purescript nm <buffer> <leader>s :<C-U>Papply<CR>
+au FileType purescript nm <buffer> <leader>a :<C-U>PaddType<CR>
+au FileType purescript nm <buffer> <leader>i :<C-U>Pimport<CR>
+au FileType purescript nm <buffer> <leader>r :<C-U>Pload<CR>
+au FileType purescript nm <buffer> <leader>p :<C-U>Pursuit<CR>
+au FileType purescript nm <buffer> <leader>C :<C-U>Pcase<CR>
+au FileType purescript nm <buffer> <leader>f :<C-U>PaddClause<CR>
+au FileType purescript nm <buffer> <leader>qa :<C-U>PaddImportQualifications<CR>
