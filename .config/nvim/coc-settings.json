@@ -4,13 +4,19 @@
       "command": "purescript-language-server",
       "args": ["--stdio"],
       "filetypes": ["purescript"],
-      "rootPatterns": ["bower.json"],
+      "rootPatterns": ["spago.dhall"],
       "settings": {
         "purescript": {
           "addNpmPath": true,
-          "buildCommand": "pulp build -I json-common/src/main/purescript -o case-mgmt/target/purescript --src-path case-mgmt/src/main/purescript -- --json-errors",
-          "outputDirectory": "case-mgmt/target/purescript",
-          "sourcePath": "*/src/main/purescript"
+          "addSpagoSources": true,
+          "buildCommand": "bin/spago-ide case-mgmt",
+	  "outputDirectory": "output",
+          "sourcePath": "case-mgmt/src/main/purescript",
+          "sourceGlobs": [
+            "json-common/src/main/purescript/**/*.purs",
+            "cc-forms/src/main/purescript/**/*.purs"
+          ],
+          "editorMode": true
         }
       }
     },
